@@ -20,8 +20,8 @@ notifications:
       - "yeojin031@gmail.com"
 
 before_install:
-  - chmod +x gradlew
   - sudo su
+  - chmod +x gradlew
 
 before_deploy:
   - zip -r Stock-Prediction-Chatbot *
