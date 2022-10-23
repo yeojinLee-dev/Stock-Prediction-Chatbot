@@ -24,8 +24,6 @@ CompanyTable = pd.DataFrame(tables[4], columns=['종목코드', '종목명', '�
 CompanyTable = CompanyTable.astype({'종목코드':'str'})
 CompanyTable = CompanyTable.astype({'현재가':'str'})
 
-CompanyTable.dtypes
-
 i = 0
 
 for code in CompanyTable['종목코드']:
@@ -37,12 +35,10 @@ for code in CompanyTable['종목코드']:
     code = '0' + code
   CompanyTable['종목코드'][i] = code
   i += 1
-  
-CompanyTable.head()
+
 
 #종목별 OHLCV 정보 수집
 stock = fdr.DataReader(CompanyTable['종목코드'][0], '2012 -01-01', datetime.today().strftime("%Y-%m-%d") )
-stock
 
 """주가 예측"""
 
@@ -98,13 +94,11 @@ def predictStockPrice(code):
   #마지막 데이터를 통해 다음 날 주가 예측
   p = model.predict(train_feature[-1,:,:].reshape(1,20,4))
   p = scaler.inverse_transform([[0,0,0, p[0][0], 0, 0]])[0][3]
-  
-  print("예측한 주가 : " + str(p))
 
   return str(p)
 
 #이후 Ubuntu 기반의 서버 환경에서 돌리게 되면 파일 경로를 절대경로로 변경해주어야 함.
-file_path = "/content/drive/MyDrive/캡스톤디자인3/predictions/" + datetime.today().strftime("%Y%m%d") + ".json"
+file_path = "/home/app/data/" + datetime.today().strftime("%Y%m%d") + ".json"
 
 """50개 기업의 주가 분석 및 예측"""
 
@@ -119,8 +113,6 @@ for code in CompanyTable['종목코드']:
   list = {'code' : code, 'stock' : CompanyTable['종목명'][i], 'curr_price' : CompanyTable['현재가'][i], 'pre_price' : p}
   data['predictions'].append(list)
   i += 1
-
-data
 
 #json 파일로 저장
 with open(file_path, 'w') as outfile:
