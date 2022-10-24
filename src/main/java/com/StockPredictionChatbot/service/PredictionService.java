@@ -1,6 +1,9 @@
 package com.StockPredictionChatbot.service;
 
+import com.StockPredictionChatbot.config.BaseException;
+import com.StockPredictionChatbot.domain.Prediction;
 import com.StockPredictionChatbot.domain.PredictionRepository;
+import com.StockPredictionChatbot.dto.GetPredictionRes;
 import com.StockPredictionChatbot.dto.SavePredictionReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +14,7 @@ import java.util.*;
 @Service
 public class PredictionService {
 
-    private PredictionRepository predictionRepository;
+    private final PredictionRepository predictionRepository;
 
     public void bulkUpdate(List<SavePredictionReq> requestList) {
 
@@ -27,5 +30,8 @@ public class PredictionService {
 
     }
 
+    public Prediction getPrediction(String stock) throws BaseException {
+        return predictionRepository.findByStock(stock);
+    }
 
 }

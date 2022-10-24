@@ -21,7 +21,7 @@ public class Prediction {
 
     private String stock;
 
-    private String currPrice;
+    private String curr_price;
 
-    private String prePrice;
+    private String pre_price;
 }

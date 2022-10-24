@@ -11,8 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SavePredictionReq {
-
+public class GetPredictionRes {
     private String code;
     private String stock;
     private String curr_price;
@@ -29,5 +28,4 @@ public class SavePredictionReq {
 
         return prediction;
     }
-
 }

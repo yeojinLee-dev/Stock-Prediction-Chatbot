@@ -103,15 +103,14 @@ file_path = "/home/app/data/" + datetime.today().strftime("%Y%m%d") + ".json"
 """50개 기업의 주가 분석 및 예측"""
 
 i = 0
-data = {}
-data['predictions'] = []
+data = []
 
 for code in CompanyTable['종목코드']:
   # if i == 5:
   #   break
   p = predictStockPrice(code)
   list = {'code' : code, 'stock' : CompanyTable['종목명'][i], 'curr_price' : CompanyTable['현재가'][i], 'pre_price' : p}
-  data['predictions'].append(list)
+  data.append(list)
   i += 1
 
 #json 파일로 저장
