@@ -3,6 +3,7 @@ package com.StockPredictionChatbot.controller;
 import com.StockPredictionChatbot.config.BaseException;
 import com.StockPredictionChatbot.config.BaseResponse;
 import com.StockPredictionChatbot.domain.Prediction;
+import com.StockPredictionChatbot.dto.GetPredictionReq;
 import com.StockPredictionChatbot.dto.GetPredictionRes;
 import com.StockPredictionChatbot.dto.SavePredictionReq;
 import com.StockPredictionChatbot.service.PredictionService;
@@ -54,9 +55,9 @@ public class PredictionController {
     }
 
     @PostMapping("/chatbot")
-    public BaseResponse<Prediction> getPrediction(@RequestParam(required = true) String stock) {
+    public BaseResponse<Prediction> getPrediction(@RequestBody GetPredictionReq getPredictionReq) {
         try {
-            return new BaseResponse<>(predictionService.getPrediction(stock));
+            return new BaseResponse<>(predictionService.getPrediction(getPredictionReq.getStock()));
         } catch (BaseException exception) {
             return new BaseResponse<>(exception.getStatus());
         }
