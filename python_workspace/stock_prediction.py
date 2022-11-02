@@ -106,8 +106,8 @@ i = 0
 data = []
 
 for code in CompanyTable['종목코드']:
-  # if i == 5:
-  #   break
+  if i == 5:
+     break
   p = predictStockPrice(code)
   list = {'code' : code, 'stock' : CompanyTable['종목명'][i], 'curr_price' : CompanyTable['현재가'][i], 'pre_price' : p}
   data.append(list)

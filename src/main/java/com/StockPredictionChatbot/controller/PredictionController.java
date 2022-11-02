@@ -27,7 +27,7 @@ public class PredictionController {
 
     private final PredictionService predictionService;
 
-    @GetMapping("/")
+    @GetMapping("/bulk")
     public BaseResponse<String> bulkUpdate()
             throws JsonParseException, JsonMappingException, IOException {
 
@@ -44,7 +44,7 @@ public class PredictionController {
 
 
         List<SavePredictionReq> savePredictionReqList =
-                objectMapper.readValue(new File(filePath), new TypeReference<>() {
+                objectMapper.readValue(new File("C:\\Users\\yeojin\\OneDrive\\바탕 화면\\과제\\4-1\\캡스톤디자인3\\프로젝트\\temper\\" + today + ".json"), new TypeReference<>() {
                 });
 
         //System.out.println(savePredictionReqList.get(0).getStock());
@@ -57,6 +57,7 @@ public class PredictionController {
     @PostMapping("/chatbot")
     public BaseResponse<Prediction> getPrediction(@RequestBody GetPredictionReq getPredictionReq) {
         try {
+            System.out.println("get predictions");
             return new BaseResponse<>(predictionService.getPrediction(getPredictionReq.getStock()));
         } catch (BaseException exception) {
             return new BaseResponse<>(exception.getStatus());
