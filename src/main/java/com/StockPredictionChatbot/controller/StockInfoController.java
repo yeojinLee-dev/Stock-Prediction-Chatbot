@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -29,6 +30,7 @@ public class StockInfoController {
 
     private final StockInfoService stockInfoService;
 
+    @Scheduled(cron = "0 31 16 * * 1-5", zone = "Asia/Seoul")
     @GetMapping("/bulk/crawling")
     public BaseResponse<String> bulkUpdateStockInfo()
             throws JsonParseException, JsonMappingException, IOException {
