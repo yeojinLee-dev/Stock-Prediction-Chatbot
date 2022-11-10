@@ -28,9 +28,20 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    bucket: stock-prediction-chatbot-zip
+    bucket: stock-prediction-chatbot-zip #s3 버킷
     region: ap-northeast-2
     skip_cleanup: true
     acl: private
     local_dir: deploy
+    wait-until-deployed: true
+
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: stock-prediction-chatbot-zip #s3 버킷
+    key: Stock-Prediction-Chatbot.zip
+    bundle_type: zip
+    application: stock-prediction
+    deployment_group: stock-prediction-group
+    region: ap-northeast-2
     wait-until-deployed: true
