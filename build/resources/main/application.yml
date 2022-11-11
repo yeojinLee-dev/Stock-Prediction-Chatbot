@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Stock-Prediction-Chatbot
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  datasource:
+    url: jdbc:mysql://stock-prediction-chatbot-db.chpfefcly6jj.ap-northeast-2.rds.amazonaws.com:3306/Stock
+    username: admin
+    password: yeo3420211!
+    driver-class-name: com.mysql.cj.jdbc.Driver
