@@ -30,7 +30,7 @@ public class StockInfoController {
 
     private final StockInfoService stockInfoService;
 
-    @Scheduled(cron = "0 31 16 * * 1-5", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 1 17 * * 1-5", zone = "Asia/Seoul")
     @GetMapping("/bulk/crawling")
     public BaseResponse<String> bulkUpdateStockInfo()
             throws JsonParseException, JsonMappingException, IOException {
