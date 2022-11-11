@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/root/app/step2
+REPOSITORY=/root/app/step2/zip
 PROJECT_NAME=Stock-Prediction-Chatbot
 
 echo "> Build 파일 복사"
@@ -26,7 +26,7 @@ echo "> JAR Name: $JAR_NAME"
 
 echo "> $JAR_NAME 에 실행권한 추가"
 
-chmod +x %JAR_NAME
+chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
