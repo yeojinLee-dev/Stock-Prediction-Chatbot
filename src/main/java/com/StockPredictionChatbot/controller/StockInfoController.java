@@ -54,6 +54,7 @@ public class StockInfoController {
         //System.out.println(savePredictionReqList.get(0).getStock());
 
         stockInfoService.bulkUpdateStockInfo(saveStockInfoReqs);
+        System.out.println(today + ".json : Update All Crawling Data Success");
 
         return new BaseResponse<>(today + " : Update All Crawling Data Success");
     }
