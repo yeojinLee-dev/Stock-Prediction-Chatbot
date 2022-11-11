@@ -30,7 +30,7 @@ public class StockInfoController {
 
     private final StockInfoService stockInfoService;
 
-    @Scheduled(cron = "0 10 17 * * 1-5", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 16 17 * * 1-5", zone = "Asia/Seoul")
     @GetMapping("/bulk/crawling")
     public BaseResponse<String> bulkUpdateStockInfo()
             throws JsonParseException, JsonMappingException, IOException {
@@ -61,7 +61,7 @@ public class StockInfoController {
     @PostMapping("/stock")
     public BaseResponse<StockInfo> getStockInfo(@RequestBody GetStockInfoReq getStockInfoReq) {
         try {
-            System.out.println("get stock information data");
+            System.out.println("get stock information data -> 자동배포 후");
             return new BaseResponse<>(stockInfoService.getStockInfo(getStockInfoReq.getStock()));
         } catch (BaseException exception) {
             return new BaseResponse<>(exception.getStatus());
