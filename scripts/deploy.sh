@@ -13,6 +13,8 @@ CURRENT_PID=$(pgrep -fl Stock-Prediction-Chatbot | grep jar | awk '{print $1}')
 echo "현재 구동 중인 애플리케이션 pid: $CURRENT_PID"
 
 if [ -z "$CURRENT_PID" ]; then
+  echo "현재 구동 중인 애플리케이션이 없으므로 종료하지 않습니다."
+else
   echo "> kill -15 $CURRENT_PID"
   kill -15 $CURRENT_PID
   sleep 5
@@ -30,4 +32,4 @@ chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
-nohup java -jar \-Dspring.config.location=classpath:/root/app/application.yml \ $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
+nohup java -jar $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
