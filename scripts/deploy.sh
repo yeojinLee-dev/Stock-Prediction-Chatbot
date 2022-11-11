@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/root/app/step2/zip
+REPOSITORY=/root/app/step2
 PROJECT_NAME=Stock-Prediction-Chatbot
 
 echo "> Build 파일 복사"
