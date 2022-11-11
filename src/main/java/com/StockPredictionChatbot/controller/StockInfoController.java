@@ -30,7 +30,7 @@ public class StockInfoController {
 
     private final StockInfoService stockInfoService;
 
-    @Scheduled(cron = "0 00 18 * * 1-5", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 30 18 * * 1-5", zone = "Asia/Seoul")
     @GetMapping("/bulk/crawling")
     public BaseResponse<String> bulkUpdateStockInfo()
             throws JsonParseException, JsonMappingException, IOException {
@@ -54,7 +54,7 @@ public class StockInfoController {
         //System.out.println(savePredictionReqList.get(0).getStock());
 
         stockInfoService.bulkUpdateStockInfo(saveStockInfoReqs);
-        System.out.println(today + ".json : Update All Crawling Data Success");
+        System.out.println(today + ".json : Update All Crawling Data");
 
         return new BaseResponse<>(today + " : Update All Crawling Data Success");
     }
