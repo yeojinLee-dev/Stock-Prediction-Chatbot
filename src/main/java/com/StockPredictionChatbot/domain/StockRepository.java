@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StockInfoRepository extends JpaRepository<StockInfo, String> {
-    StockInfo findByStock(String stock);
+public interface StockRepository extends JpaRepository<Stock, String> {
+    Stock findByStockName(String stock_name);
 }

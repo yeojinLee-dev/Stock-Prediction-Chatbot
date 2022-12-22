@@ -7,7 +7,7 @@ spring:
         enabled: true
 
   datasource:
-    url: jdbc:mysql://stock-prediction-chatbot-db.chpfefcly6jj.ap-northeast-2.rds.amazonaws.com:3306/Stock
-    username: admin
-    password: yeo3420211!
+    url: jdbc:mysql://localhost:3306/stock-prediction-chatbot
+    username: root
+    password: yeojin
     driver-class-name: com.mysql.cj.jdbc.Driver

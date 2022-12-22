@@ -2,13 +2,9 @@ package com.StockPredictionChatbot.controller;
 
 import com.StockPredictionChatbot.config.BaseException;
 import com.StockPredictionChatbot.config.BaseResponse;
-import com.StockPredictionChatbot.domain.Prediction;
-import com.StockPredictionChatbot.domain.StockInfo;
-import com.StockPredictionChatbot.dto.GetPredictionReq;
-import com.StockPredictionChatbot.dto.GetStockInfoReq;
-import com.StockPredictionChatbot.dto.SavePredictionReq;
+import com.StockPredictionChatbot.domain.Stock;
 import com.StockPredictionChatbot.dto.SaveStockInfoReq;
-import com.StockPredictionChatbot.service.StockInfoService;
+import com.StockPredictionChatbot.service.StockService;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -28,7 +24,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StockInfoController {
 
-    private final StockInfoService stockInfoService;
+    private final StockService stockService;
 
     @Scheduled(cron = "0 30 18 * * 1-5", zone = "Asia/Seoul")
     @GetMapping("/bulk/crawling")
@@ -53,19 +49,17 @@ public class StockInfoController {
 
         //System.out.println(savePredictionReqList.get(0).getStock());
 
-        stockInfoService.bulkUpdateStockInfo(saveStockInfoReqs);
+        stockService.bulkUpdateStockInfo(saveStockInfoReqs);
         System.out.println(today + ".json : Update All Crawling Data");
 
         return new BaseResponse<>(today + " : Update All Crawling Data Success");
     }
 
-    @PostMapping("/stock")
-    public BaseResponse<StockInfo> getStockInfo(@RequestBody GetStockInfoReq getStockInfoReq) {
-        try {
-            System.out.println("get stock information data -> 자동배포 후");
-            return new BaseResponse<>(stockInfoService.getStockInfo(getStockInfoReq.getStock()));
-        } catch (BaseException exception) {
-            return new BaseResponse<>(exception.getStatus());
-        }
+    @PostMapping("/api/stock")
+    public Stock getStock(@RequestParam("stock_name") String stock_name) throws BaseException {
+        System.out.println("getStock() ");
+        return stockService.getStockInfo(stock_name);
+
     }
+
 }
