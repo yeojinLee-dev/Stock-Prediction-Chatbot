@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /root/app/step2/zip/
+    destination: /capston
     overwrite: yes
 
 permissions:
