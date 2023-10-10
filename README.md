@@ -14,7 +14,7 @@ Travis CI, S3, Codedeploy를 이용한 자동 배포
 
 ## 프로젝트 설명
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e2d0e5e-05ce-430b-a36d-3aff21a8959c/Untitled.png)
+![내일의 주가예측 프로세스 구조도](https://github.com/yeojinLee-dev/Fintech-OpenAPI-Project/assets/80297591/a29d03eb-09cf-4b86-9a22-8d835bd903e2)
 <aside>
 💬 내일의 주가 예측 프로젝트
 
@@ -56,6 +56,7 @@ Travis CI, S3, Codedeploy를 이용한 자동 배포
     
 
 **결과 예시**
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3bbc65c-5b76-4bcd-a463-7099015a03f7/Untitled.png)
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae46b870-1345-4d6f-8c49-e464dc8dedfb/Untitled.png)
+![내일의 주가예측 예시사진 1](https://github.com/yeojinLee-dev/Fintech-OpenAPI-Project/assets/80297591/bac49d87-7359-4611-954c-5173304dabb3)
+
+![내일의 주가예측 예시사진 2](https://github.com/yeojinLee-dev/Fintech-OpenAPI-Project/assets/80297591/7bd467d2-655a-4fe3-a3e6-35cd51df3cde)
 </aside>
