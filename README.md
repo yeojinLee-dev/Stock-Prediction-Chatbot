@@ -1,6 +1,9 @@
 # Stock-Prediction-Chatbot
 Travis CI, S3, Codedeploy를 이용한 자동 배포
 
+## 참여 인원
+- 1명
+
 ## 사용 기술
 
 - Backend : **SpringBoot**
@@ -11,10 +14,9 @@ Travis CI, S3, Codedeploy를 이용한 자동 배포
 
 ## 프로젝트 설명
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e2d0e5e-05ce-430b-a36d-3aff21a8959c/Untitled.png)
-
+![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e2d0e5e-05ce-430b-a36d-3aff21a8959c/Untitled.png)
 <aside>
-💬 **내일의 주가 예측 프로젝트**
+💬 내일의 주가 예측 프로젝트
 
 - 정해진 시간에 종가 데이터를 크롤링하여 가공하고, 데이터 분석 진행
     - linux의 crontab 이용
@@ -54,6 +56,6 @@ Travis CI, S3, Codedeploy를 이용한 자동 배포
     
 
 **결과 예시**
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3bbc65c-5b76-4bcd-a463-7099015a03f7/Untitled.png)
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae46b870-1345-4d6f-8c49-e464dc8dedfb/Untitled.png)
+![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3bbc65c-5b76-4bcd-a463-7099015a03f7/Untitled.png)
+![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae46b870-1345-4d6f-8c49-e464dc8dedfb/Untitled.png)
 </aside>
