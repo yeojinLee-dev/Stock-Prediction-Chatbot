@@ -56,7 +56,7 @@ Travis CI, S3, Codedeploy를 이용한 자동 배포
     
 
 **결과 예시**
-![내일의 주가예측 예시사진 1](https://github.com/yeojinLee-dev/Fintech-OpenAPI-Project/assets/80297591/bac49d87-7359-4611-954c-5173304dabb3)
 
+![내일의 주가예측 예시사진 1](https://github.com/yeojinLee-dev/Fintech-OpenAPI-Project/assets/80297591/bac49d87-7359-4611-954c-5173304dabb3)
 ![내일의 주가예측 예시사진 2](https://github.com/yeojinLee-dev/Fintech-OpenAPI-Project/assets/80297591/7bd467d2-655a-4fe3-a3e6-35cd51df3cde)
 </aside>
