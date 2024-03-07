@@ -1,4 +1,4 @@
-# Stock-Prediction-Chatbot
+# Stock-Prediction
 Travis CI, S3, Codedeploy를 이용한 자동 배포
 
 ## 참여 인원
